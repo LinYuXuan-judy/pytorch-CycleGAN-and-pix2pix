@@ -87,24 +87,24 @@ def main(path, source_path, ratioA, ratioB):
         bitmap = bitmaplist[arr[x]]
         source_img = sourcelist[arr[x]]
         if arr[x] <= ntrainA and arr[x] <= ntrainB:
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 trainA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 trainB_path, str(ord(ch)) + '.png'), source_img)
         elif arr[x] > ntrainA and arr[x] <= ntrainB:
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 testA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 trainB_path, str(ord(ch)) + '.png'), source_img)
         elif arr[x] <= ntrainA and arr[x] > ntrainB:
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 trainA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 testB_path, str(ord(ch)) + '.png'), source_img)
         else:
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 testA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imsave(os.path.join(
+            scipy.misc.imwrite(os.path.join(
                 testB_path, str(ord(ch)) + '.png'), source_img)
 
 
