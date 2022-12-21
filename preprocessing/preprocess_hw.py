@@ -13,7 +13,8 @@ from PIL import ImageFont
 import json
 import collections
 import random
-reload(sys)
+import importlib
+importlib.reload(sys)
 sys.setdefaultencoding("utf-8")
 
 
