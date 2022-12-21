@@ -34,7 +34,8 @@ def resize_image(img):
         pad_dims = ((0, 0), (pad_size, pad_size))
     img = np.lib.pad(img, pad_dims, mode='constant', constant_values=255)
     # resize
-    img = scipy.misc.imresize(img, (128, 128))
+    img = np.array(Image.fromarray(img).resize(size = (128, 128)))
+    # img = scipy.misc.imresize(img, (128, 128))
     assert img.shape == (128, 128)
     return img
 
