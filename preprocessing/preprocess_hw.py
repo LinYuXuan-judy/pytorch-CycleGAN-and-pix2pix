@@ -14,6 +14,7 @@ import json
 import collections
 import random
 import importlib
+import imageio
 importlib.reload(sys)
 # sys.setdefaultencoding("utf-8")
 
@@ -87,24 +88,24 @@ def main(path, source_path, ratioA, ratioB):
         bitmap = bitmaplist[arr[x]]
         source_img = sourcelist[arr[x]]
         if arr[x] <= ntrainA and arr[x] <= ntrainB:
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 trainA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 trainB_path, str(ord(ch)) + '.png'), source_img)
         elif arr[x] > ntrainA and arr[x] <= ntrainB:
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 testA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 trainB_path, str(ord(ch)) + '.png'), source_img)
         elif arr[x] <= ntrainA and arr[x] > ntrainB:
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 trainA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 testB_path, str(ord(ch)) + '.png'), source_img)
         else:
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 testA_path, str(ord(ch)) + '.png'), bitmap)
-            scipy.misc.imwrite(os.path.join(
+            imageio.imwrite(os.path.join(
                 testB_path, str(ord(ch)) + '.png'), source_img)
 
 
