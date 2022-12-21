@@ -15,7 +15,7 @@ import collections
 import random
 import importlib
 importlib.reload(sys)
-sys.setdefaultencoding("utf-8")
+# sys.setdefaultencoding("utf-8")
 
 
 def draw_single_char(ch, font, canvas_size=128, x_offset=0, y_offset=0):
